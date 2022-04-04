@@ -46,6 +46,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://AmyBaldwin.github.io/maintenance_manual/secure.html</loc>
+         <lastmod>2022-04-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://AmyBaldwin.github.io/maintenance_manual/security_updates.html</loc>
          <lastmod>2022-04-04</lastmod>
          <changefreq>daily</changefreq>
