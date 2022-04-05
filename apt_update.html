@@ -63,7 +63,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="clear.html">Removing un-needed files</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="input.html">Populating miniApp input folders</a>
+                    <li class="toctree-l1"><a class="reference internal" href="input.html">Populating the Tool input folders</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Server Upkeep</span></p>
@@ -71,8 +71,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="secure.html">Security updates</a>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="apt_update.html">Updating apt</a>
-                    </li>
-                    <li class="toctree-l1"><a class="" href="restart.md">Server restart</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Disaster Recovery</span></p>
@@ -125,7 +125,27 @@
           <div role="main">
             <div class="section">
               
-                <p>Populate this.</p>
+                <h1 id="updating-the-package-manager">Updating the package manager</h1>
+<p>APT is the default package manager on Ubuntu/Debian based Linux distributions.</p>
+<p>When you log into the Volac server you will see this message:</p>
+<p><img src="img/ss_apt_update.png" alt="login screen" width="500" height="600"> </p>
+<p>In this case, towards the bottom you see:</p>
+<pre><code>22 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+</code></pre>
+<p>To upgrade, enter the follow commands. You will need to enter the server password for command that includes <code>sudo</code>.</p>
+<pre><code>sudo apt update
+
+
+apt list --upgradable
+
+
+sudo apt dist-upgrade -y
+</code></pre>
+<p>Next time you log in the message will be:</p>
+<pre><code>0 updates can be applied immadiately.
+</code></pre>
+<hr />
               
             </div>
           </div>
