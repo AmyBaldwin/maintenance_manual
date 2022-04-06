@@ -77,6 +77,14 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="rebuild.html">A fresh build</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#populating-the-new-build">Populating the new build</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-authenticate-to-github">1. Authenticate to GitHub</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-clone-the-repositories">2. Clone the repositories</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -125,16 +133,44 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="a-fresh-software-build">A fresh software build</h2>
+                <h1 id="a-fresh-software-build">A fresh software build</h1>
+<p><em>REBUILDING A SERVER WILL DELETE ALL CURRENT DATA ON THE SERVER.</em></p>
 <p>To set up the server with a fresh build, you first need to return it to it's original state. Ask Volac I.T. to wipe the server and install <strong>ubuntu-20.04</strong> and <strong>java, openjdk-11</strong>. </p>
 <p>Next, use an ansible playbook to set up necessary software tools. This is automated by an ansible playbook, <a href="https://github.com/volac-genomics/vg-install">vg-install</a>. Follow the <a href="https://github.com/volac-genomics/vg-install#install-instructions">install instructions</a> on the playbook's website.</p>
+<p>The playbook has been tested using GitHub Actions. </p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>As well as installing the necessary software, the ansible playbook it sets up the <code>genome_tools/</code> folder and populates it with Tool 1, Tool 2 and Tool 3. Tool 4 and the Core need to be added manually.</p>
+<p>The playbook will set up the server with the <a href="server.html">original software versions</a>. </p>
+<p>As well as installing the necessary software, the ansible playbook sets up the <code>genome_tools/</code> folder and populates it with Tool 1, Tool 2 and Tool 3. </p>
+<p>Tool 4, the Core, and the maintenance and reference libraries folders need to be added manually, see below.</p>
 </div>
 <hr />
-<p>The playbook has been tested using GitHub Actions. </p>
-<p>The playbook will set up the server with the original software versions. </p>
+<h2 id="populating-the-new-build">Populating the new build</h2>
+<p>Four modules are not set up automatically by the ansible playbook. They are stored in private repositories in the <a href="https://github.com/volac-genomics">volac-genomics</a> GitHub site. They can be cloned to the local server as follows.</p>
+<h3 id="1-authenticate-to-github">1. Authenticate to GitHub</h3>
+<p>Using the command line, enter the following commands substituting your details for Fred's:</p>
+<pre><code>git config --global user.name Fred Blogs
+
+git config --global user.email fred.blogs@place.com
+
+ssh -T git@github.com
+</code></pre>
+<p>Next, follow these instructions to <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">create a personal access token</a>. You will need this to access GitHub.</p>
+<h3 id="2-clone-the-repositories">2. Clone the repositories</h3>
+<p>Using the command line, change directory using:</p>
+<pre><code>cd ~/genome_tools/
+</code></pre>
+<p>Then enter the following commands to clone the private repositories to your local server. You will need to enter your personal access token each time. The token starts <code>ghp_</code>.</p>
+<pre><code>git clone https://github.com/volac-genomics/Core.git
+
+git clone https://github.com/volac-genomics/Tool_4.git
+
+git clone https://github.com/volac-genomics/reference_libraries.git
+
+git clone https://github.com/volac-genomics/maintenance.git
+</code></pre>
+<p>The server has now been restored to it's original state.</p>
+<hr />
               
             </div>
           </div>
