@@ -61,7 +61,7 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="reflib.html">Updating reference libraries</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#making-the-new-library">Making the new library</a>
+    <li class="toctree-l2"><a class="reference internal" href="#making-a-new-library">Making a new library</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#linking-the-tools-to-the-new-library">Linking the Tools to the new library</a>
         <ul>
@@ -74,6 +74,8 @@
         </ul>
     </li>
     </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="importing.html">Importing a library</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="clear.html">Removing un-needed files</a>
                     </li>
@@ -137,14 +139,14 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="updating-the-reference-libraries">Updating the reference libraries</h1>
+                <h1 id="updating-the-reference-libraries-from-refseq">Updating the reference libraries from RefSeq</h1>
 <hr />
-<p>The taxonomy and phylogeny reference libraries are required by </p>
+<p>Core and Tool 4 require reference libraries downloaded from RefSeq. The python scripts automate this process for you and deposit the new library in the <code>reference_libraries</code> folder. You need to update the Tool's config files so that they use the new libraries. </p>
 <hr />
-<h2 id="making-the-new-library">Making the new library</h2>
+<h2 id="making-a-new-library">Making a new library</h2>
 <p>Reference libraries can easily be made as follows:</p>
 <ol>
-<li> Navigate to the <code>scripts</code> folder by entering <code>cd /genomics/home/vol-genomics/genome_tools/reference_libraries/scripts</code>. </li>
+<li> Navigate to the <code>_maintenance_</code> folder by entering <code>cd ~/genome_tools/_maintenance_</code>. </li>
 <li> Run the appropriate script using the command in the table below. </li>
 <li> Check that the following message appears: <code>Reference library complete</code>.</li>
 </ol>
@@ -222,7 +224,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="clear.html" class="btn btn-neutral float-right" title="Removing un-needed files">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="importing.html" class="btn btn-neutral float-right" title="Importing a library">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="containers.html" class="btn btn-neutral" title="Updating software"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -258,7 +260,7 @@
       <span><a href="containers.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="clear.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="importing.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
